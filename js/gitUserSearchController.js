@@ -20,8 +20,10 @@ githubUserSearch.controller('GitUserSearchController', ['$resource', function($r
   // };
 
   self.doSearch = function() {
-    self.searchResult = searchResource.get(
-      { q: self.searchTerm }
-    );
+    if(self.searchTerm !== '') {
+      self.searchResult = searchResource.get(
+        { q: self.searchTerm }
+      );
+    };
   };
 }]);
